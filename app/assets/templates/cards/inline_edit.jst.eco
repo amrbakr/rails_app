@@ -1,0 +1,69 @@
+		
+		<div class="row-fluid">
+  <!--fieldset class="span6">
+    <legend>User information</legend>
+
+	<div class="user_info">
+		
+		
+	</div>
+	    
+  </fieldset-->
+
+  
+  <fieldset class="span6">
+    <legend>Card information</legend>
+    
+    <div class="card_info">
+    	
+    </div>
+
+    
+  </fieldset>
+  
+  
+  <div class="span6">
+  	<% if @showPreview: %>
+  	<div class="card" style="margin: 0 auto;">
+	
+	<div class="card-data">
+		<div class="card-number"><%= @card.get('number') %></div>
+		<div class="card-dates">
+			
+			<div class="card-date">
+				<div class="card-date-label">VALID FROM</div>
+				<div class="card-date-value"><%= @card.get('validFrom') %></div>
+			</div>
+			
+			<div class="card-date">
+				<div class="card-date-label">VALID THRU</div>
+				<div class="card-date-value"><%= @card.get('validTo') %></div>
+			</div>
+			
+			
+			<div style="clear:both"></div>
+			
+		</div>
+
+		<div class="card-name">
+			<%= @card.get('nameOnCard') %>
+		</div>
+		
+	</div>
+
+</div>
+<% end %>
+
+  </div>
+ 
+  </div>
+  
+<% if @showActions: %>
+  <div class="form-actions">
+<button type="submit" class="btn btn-success">Save</button>
+
+<a href="javascript:;" class="btn btn-danger btn btn-cancel">Cancel</a>
+  </div>
+<% end %>
+  
+  

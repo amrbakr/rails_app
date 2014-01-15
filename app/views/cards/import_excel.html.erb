@@ -1,0 +1,125 @@
+<%= render :partial => 'cards/base', :locals => { :current => "import" } %>
+<%# render 'form' %>
+
+<% content_for :title do %>
+  Cards
+<% end %>
+
+
+<% content_for :subtitle do %>
+ 	Confirm uploaded data
+<% end %>
+
+
+<table class="table table-hover table-striped">
+	<thead>
+		<tr class="info">
+			<th>ID</th>
+			<th>Fullname</th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Mobile</th>
+			<th>Email</th>
+			<th>Date of Birth</th>
+			<th>Type</th>
+			<th>Amount</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		
+		<% @data.each do |item| %>
+		<tr>
+		  <td>
+			<%= item[:id]%>
+		  </td>
+	      <td><%= item[:fullName]%></td>
+		  <td><%= item[:firstName]%></td>
+	      <td><%= item[:lastName]%></td>
+		  <td><%= item[:mobile]%></td>
+		  <td><%= item[:email]%></td>
+		  <td><%= item[:dob]%></td>
+		  <td><%= item[:type]%></td>
+		  <td><%= item[:amount]%></td>
+		  <td class="status_indicator_norm"><span class="icon-ok"></span> <img class="spinner" src="/assets/spinner.gif" /></td>
+		  
+	    </tr>
+		
+		<% end %>
+	
+	</tbody>
+</table>
+<script>
+$(function(){
+	
+	$(".confirm_excel").click(function(){
+	
+	
+	trs = $("tr")
+	
+	for(var i =0; i<trs.length; i++) {
+		
+		
+	}
+	
+	$("tr").each(function(){
+		
+		
+		$(this).find("td:last").removeClass("status_indicator_norm").addClass("status_indicator_progress");
+		
+		
+		card = new Kworkflow.Models.Card();
+		
+		card.set("nameOnCard", $($(this).find("td")[1]).text())
+		card.set("type_id", 1)
+		//card.set("number", "00000000000000")
+		
+		card.User = new Kworkflow.Models.User()
+		
+		card.User.set("email", $($(this).find("td")[5]).text())
+		card.User.set("firstName", $($(this).find("td")[2]).text())
+		card.User.set("lastName", $($(this).find("td")[3]).text());
+		
+		
+		(function(c, tr) {
+		
+			card.User.save({}, {success: function(u) {
+				
+				c.set("user_id", u.get("id"))
+				
+				c.save()
+				
+				$(tr).find("td:last").removeClass("status_indicator_progress").addClass("status_indicator_success");
+				
+			
+			}
+		
+		})})(card, this);
+		
+		
+		
+		
+		
+		//card.save()
+		
+	});
+});
+})
+
+
+</script>
+
+<%# form_tag({:action => :import_excel}, :multipart => true) do %>
+  
+  <div class="form-actions">
+  	
+  	<input type="hidden" name="fileid" value="<%=@fileid%>">
+  	<button type="submit" class="btn btn-success btn confirm_excel">Confirm</button>
+  	
+  	<a href="<%=:back%>" class="btn btn-danger btn">Cancel</a>
+  </div>
+  
+<%# end %>
+
+

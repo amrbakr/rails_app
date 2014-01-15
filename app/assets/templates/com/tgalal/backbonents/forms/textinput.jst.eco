@@ -1,0 +1,1 @@
+<input type="text" class="<%=@className%>" placeholder="<%=@placeholder %>" value="<%=@value%>">

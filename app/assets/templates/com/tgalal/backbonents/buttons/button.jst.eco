@@ -1,0 +1,6 @@
+<% if @anchor: %>
+<a href="<%= @target %>" class="btn <%= @class %>"><%= @text %></a>
+
+<% else: %>
+<button data-complete-text="<%=@completeText%>" data-loading-text="<%=@loadingText%>" class="btn <%= @class %>"><%= @text %></button>
+<% end %>

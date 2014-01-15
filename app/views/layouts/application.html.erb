@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KiwiConsumerBackend</title>
+  
+  <%= stylesheet_link_tag    "bootstrap/css/bootstrap.min",  :media => 'screen'	%>
+  
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application",  :media => 'screen'	%>
+  
+  <%= javascript_include_tag "bootstrap/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "bootstrap-modal/js/bootstrap-modalmanager.js" %>
+  <%= javascript_include_tag "bootstrap-modal/js/bootstrap-modal.js" %>
+  <%= csrf_meta_tags %>
+  
+  
+  
+  <style>
+   body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+   </style>
+   
+   <%= stylesheet_link_tag    "bootstrap/css/bootstrap-responsive.min",  :media => 'screen'	%>
+   <%= stylesheet_link_tag    "bootstrap-modal/css/bootstrap-modal",  :media => 'screen'	%>
+   
+</head>
+
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" style="padding:0; padding-right:20px" href="/"><%=image_tag "logo.png", :style=>"height:40px;"%></a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+            <ul class="nav">
+              <li <% if @identifier == nil %> class="active" <% end %> ><a href="/">Home</a></li>
+              <li <% if @identifier=="cards" %> class="active" <% end %> id="main_cards"><a href="/cards">Cards</a></li>
+              <li id="main_offers"><a href="/offers">Vouchers/Discounts</a></li>
+              <li <% if @identifier=="phone_availability" %> class="active" <% end %>  id="main_checkphone"><a href="/misc/phone-availability">Check phone availability</a></li>
+              <li id="main_validate"><a href="/offers/validate">Validate Offer</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+    	
+      <div class="row-fluid">
+      	
+      	<% unless content_for(:submenu).blank? %>
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul id="submenu" class="nav nav-list">
+              
+              <!-- dynamic_module_specific -->
+              
+              <%= yield :submenu%>
+              
+            
+              
+              <!-- app_general 
+              <li class="nav-header">Other</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li-->
+             
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+         <div class="span9">
+        <% else %>
+        <div class="span12">
+        <% end %>
+           
+           <% if @error != nil%>
+           <div class="alert alert-error">
+			  <%=@error%>
+			</div>
+		   <% end %>
+           <% if @hero_unit != nil %>	
+        	
+          <div class="hero-unit">
+            <h1><%= yield :title%></h1>
+            
+            <p><%= yield :subtitle%></p>
+          </div>
+			 
+			
+			<% else %>
+			
+			
+			 <% unless content_for(:title).blank? && content_for(:subtitle).blank? %>
+			
+			 <div class="page-header">
+			  <h1><%= yield :title%><small><%= yield :subtitle%></small></h1>
+			</div>
+			
+			<% end %>
+			
+			<% end %>
+			
+
+          <div class="row-fluid">
+
+            <%= yield %>
+          </div><!--/row-->
+         
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Kiwi 2013</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+  </body>
+</html>
+
+
+
+
+</html>

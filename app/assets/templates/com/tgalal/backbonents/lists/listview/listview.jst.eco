@@ -1,0 +1,8 @@
+<div class="listview">
+	<div class="listview-header"></div>
+	<ul class="media-list listview-body">
+	</ul>
+
+	<div class="listview-footer"></div>
+	
+</div>

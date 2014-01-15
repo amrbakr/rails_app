@@ -1,0 +1,60 @@
+<%= render :partial => 'cards/base', :locals => { :current => "check"} %>
+<% content_for :title do %>
+  Cards
+<% end %>
+
+<% content_for :subtitle do %>
+  Listing cards
+<% end %>
+
+<div id="cards_section_1">
+	
+</div>
+
+<div id="cards_section_2">
+	
+</div>
+
+<!--table class="table table-hover table-striped">
+	<thead>
+		<tr class="info">
+			<th><input type="checkbox" class="selectAll">
+			</th><th>#</th>
+			<th>Name on card</th>
+			<th>Card number</th>
+			<th>Issue date</th>
+			<th>Expiration date</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		
+		
+		<% @cards.each do |card| %>
+		
+		<tr>
+		  <td>
+			<input type="checkbox" class="selectCard" id="0000">
+		  </td>
+	      <td><%= card.id %></td>
+		  <td><%= card.nameOnCard %></td>
+	      <td><%= card.number %> </td>
+		  <td><%= card.created_at %></td>
+		  <td><%= card.expirationDate %></td>
+		  <td>
+			<a href="#">
+				<span src="" class="icon-edit">&nbsp;</span>
+			</a></td>
+	    </tr>
+		
+		
+		
+		<% end %>
+
+	</tbody>
+</table-->
+
+<script type="text/javascript">
+	//window.queuedUrl = "cards/check"
+</script>

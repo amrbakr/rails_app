@@ -1,0 +1,8 @@
+<div class="alert <%=@class %>">
+  <% if @allowDismiss: %>
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <% end %>
+  
+  
+  <strong><%=@title%></strong> <%= @body %>
+</div>

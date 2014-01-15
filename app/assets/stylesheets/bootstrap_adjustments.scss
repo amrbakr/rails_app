@@ -1,0 +1,29 @@
+.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+  
+  background-color: #4cb747;
+}
+
+a, a:focus, a:hover {
+  color: #4cb747;
+}
+
+li.info {
+  //@extend .table-hover tbody tr.info;
+  background-color: #C4E3F3;
+}
+
+.pagination {
+  margin: 0;
+}
+
+.btn {
+  margin-right: 4px;
+}
+
+.btn-group {
+  
+  margin-right: 4px;
+  .btn {
+    margin-right: 0;
+  }
+}

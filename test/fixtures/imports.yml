@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  originalName: MyString
+  deleted: false
+  isValid: false
+  ext_id: 1
+
+two:
+  name: MyString
+  originalName: MyString
+  deleted: false
+  isValid: false
+  ext_id: 1

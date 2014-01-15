@@ -1,0 +1,53 @@
+		
+<div class="row-fluid">
+	
+  <div class="notif"></div>	
+ 
+  <div class="span12">
+	  	<div class="card">
+		
+		<div class="card-data">
+			<div class="card-number"><%= @card.get('number') or "0000 0000 0000 0000" %></div>
+			<div class="card-dates">
+				
+				<div class="card-date">
+					<div class="card-date-label">VALID FROM</div>
+					<div class="card-date-value"><%= @startMonth %>/<%= @startYear %></div>
+				</div>
+				
+				<div class="card-date">
+					<div class="card-date-label">VALID THRU</div>
+					<div class="card-date-value"><%= @endMonth %>/<%= @endYear %></div>
+				</div>
+				
+				
+				<div style="clear:both"></div>
+				
+			</div>
+	
+			<div class="card-name">
+				<%= @card.get('nameOnCard') or "NAME ON CARD" %>
+			</div>
+			
+		</div>
+
+	</div>
+	
+	<div class="card_edit">
+		
+		
+	</div>
+	
+	<div style="text-align:right; padding-right: 10px;">
+		<a href="/cards/<%= @card.get('id') %>/edit">Full Edit</a>
+	</div>
+	
+	<div class="card_actions">
+		
+	</div>
+
+  </div>
+ 
+ </div>
+ 
+<div class="confirm_modal"></div>

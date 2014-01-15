@@ -1,0 +1,22 @@
+  <td><%= @item.get('id') %></td>
+  <td><%= @item.get('nameOnCard') %></td>
+  <td><a class="card_view" href="javascript:;"><%= @item.get('number') %></a></td>
+  <td><%= @item.get('created_at') %></td>
+  <td><%= @item.get('expirationDate') %></td>
+  
+  <!--td><input class="callChecker" type="checkbox" <% if @item.get('called'):%> checked="checked"<%end%> disabled/></td>
+  <td><input class="sanityChecker" type="checkbox" <% if @item.get('sanityChecked'):%> checked="checked"<%end%> disabled/></td-->
+  	
+  <td><% if @item.get('called'):%> <span class="icon-ok"></span><%end%></td>
+  <td><% if @item.get('sanityChecked'):%> <span class="icon-ok"></span><%end%></td>
+  
+
+  <td>
+<a href="javascript:;" class="card_edit">
+	<span src="" class="icon-edit">&nbsp;</span>
+</a></td>
+
+  <td>
+<a href="javascript:;" class="card_view">
+	<span src="" class="icon-eye-open">&nbsp;</span>
+</a></td>

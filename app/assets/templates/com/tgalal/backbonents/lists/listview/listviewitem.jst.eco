@@ -1,0 +1,31 @@
+<!--li class="media"-->
+
+<div class="clearfix">
+	
+<div class="pull-left">
+<a class="pull-left" href="#">
+	
+  <% if @item.image: %>
+  <img class="media-object" data-src="<%= @item.get(@mapping['image']) %>">
+  
+  <%end%>
+  
+</a>
+<div class="media-body">
+  <h4 class="media-heading"><%= @item.get(@mapping['title']) %></h4>
+      <%= @item.get(@mapping['description']) %>
+ 
+    
+</div>
+</div>
+
+
+<div class="pull-right listitem-controls">
+  <img src="/assets/spinner.gif" class="spinner" style="display:none" />
+  <% if @allowRemove: %>
+  <button type="button" class="close">×</button>
+  <% end %>
+</div>
+
+</div>
+<!--/li-->

@@ -1,0 +1,15 @@
+<%= render :partial => 'cards/base', :locals => { :current => "index"} %>
+<% content_for :title do %>
+<% end %>
+
+<% content_for :subtitle do %>
+ 
+<% end %>
+
+<div id="cards_root">
+</div>
+
+
+<script>
+	window.Router = Kworkflow.Routers.Cards
+</script>

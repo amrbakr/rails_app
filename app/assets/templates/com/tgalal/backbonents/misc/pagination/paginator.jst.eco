@@ -1,0 +1,21 @@
+<div class="pagination pagination-centered">
+  <ul>
+  	
+  	<% if @showPrev: %>
+  	
+    <li<% if @collection.currentPage ==0 : %> class="disabled"<%end%>><a class="prev" href="javascript:;">Prev</a></li>
+    
+    <% end %>
+    
+    <% for i in [0..@collection.totalPages-1]: %>
+    
+    <li<% if @collection.currentPage == i: %> class="active"<%end%>><a class="page" href="javascript:;"><%= i %></a></li>
+    <% end %>
+    
+    <% if @showNext: %>
+  	
+    <li<% if @collection.currentPage == @collection.totalPages-1 : %> class="disabled"<%end%>><a class="next" href="javascript:;">Next</a></li>
+    
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,86 @@
+<table class="table table-bordered">
+	<thead>
+		<th>#</th>
+		<th>Date</th>
+		<th>Content</th>
+		<th>type</th>
+		<th>status</th>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td>
+				132#Production X
+			</td>
+			<td>
+				DD-MM-YYYY HH:MM:SS
+			</td>
+			<td>
+				<ul>
+					<li>TAREK GALAL 94-05320-325023</li>
+					<li>TAREK GALAL 94-05320-325023</li>
+					<li>TAREK GALAL 94-05320-325023</li>
+					<li>TAREK GALAL 94-05320-325023</li>
+					<li>TAREK GALAL 94-05320-325023</li>
+					<li>TAREK GALAL 94-05320-325023</li>
+				</ul>
+			</td>
+			<td>
+				COD
+			</td>
+			<td>
+				In production
+			</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+
+<div class="section">
+	<h3>Buttons</h1>
+	<div class="buttons">
+		<div class="accept_button"></div>
+		<div class="reject_button"></div>
+	</div>
+</div>
+
+<div class="section">
+	<h3>Dialogs</h1>
+	<div class="confirm_dialog"></div>
+	<div class="dialog"></div>
+	
+	
+	<div class="show_confirm_btn"></div>
+	<div class="show_dialog_btn"></div>
+	
+</div>
+
+<div class="section">
+	<h3>Input</h1>
+	<div class="text_input"></div>
+	
+	<h3>Textarea</h1>
+	<div class="text_area"></div>
+	
+</div>
+
+<div class="section">
+	<h3>Form</h1>
+	<div class="form_root"></div>
+	
+</div>
+
+<h3> Unordered list</h3>
+<div class="unordered_list">
+	
+</div>
+
+<h3> Tabular list</h3>
+<div class="tabular_list">
+	
+</div>
+
+<div class="card_show">
+	
+</div>

@@ -1,0 +1,8 @@
+<% if @collection.length >0: %>
+
+<% for i, j of @collection.models[0].attributes: %>
+<th><%= i %></th>
+<% end %>
+
+
+<% end %>

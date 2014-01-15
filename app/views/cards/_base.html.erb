@@ -1,0 +1,53 @@
+<% content_for :submenu do %>
+	<%= render :partial => 'partials/submenu',  :locals => {:items => 
+		
+		
+		{"Flow" => [
+			{
+				:id => "check",
+				:href => "/cards#check",
+				:title=>"list cards",
+				:text=>"Pending Check"
+			},
+			
+			{
+				:id => "production",
+				:href => "/cards#production",
+				:title=>"list cards",
+				:text=>"In production"
+			},
+			
+			{
+				:id => "shipments",
+				:href => "/cards#shipments",
+				:title=>"list cards",
+				:text=>"Shipments"
+			}
+		],
+
+		"Add" => [
+
+			{
+				:id => "add",
+				:href => "/cards/new",
+				:title =>"Add card",
+				:text =>"Add Card"
+			},
+			
+			{
+				:id => "import",
+				:href => "/cards/import",
+				:title =>"Upload cards",
+				:text =>"Upload Excel Sheet"
+			}
+			
+		]
+		
+		
+		
+		
+		},
+		
+		
+		:current => current } %>
+<% end %>

@@ -1,0 +1,14 @@
+<table class="table table-striped <%=@className %>">
+	<thead class="listview-header">
+
+	</thead>
+	
+	<tbody class="listview-body">
+
+	</tbody>
+	
+	<tfoot class="listview-footer">
+		
+	</tfoot>
+
+</table>

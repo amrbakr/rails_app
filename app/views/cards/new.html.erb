@@ -1,0 +1,133 @@
+<%= render :partial => 'cards/base', :locals => { :current => "add" } %>
+<%# render 'form' %>
+
+
+
+
+
+
+<% content_for :title do %>
+  Cards
+<% end %>
+
+
+<% content_for :subtitle do %>
+  New card
+<% end %>
+
+
+
+<!--form>
+  <fieldset>
+    <legend>User information</legend>
+    <label>First name</label>
+    <input type="text" placeholder="Type something…">
+    <span class="help-block">Example block-level help text here.</span>
+    <label class="checkbox">
+      <input type="checkbox"> Check me out
+    </label>
+    <button type="submit" class="btn">Submit</button>
+  </fieldset>
+</form-->
+
+
+
+<%= form_for @card, :url => {:action => "create"} do |card_form| %>
+	
+  <div class="row-fluid">
+	  <fieldset class="span6">
+	    <legend>User information</legend>
+
+	    <%= fields_for @user do |user_fields| %>
+	    	
+	    	<% unless user_fields.error_messages.length == 0%>
+	    	<div class="alert alert-error">
+	    	<%= user_fields.error_messages %>
+	    	</div>
+	    	<% end %>
+	    	<label>First name</label>
+		    
+		    <%= user_fields.text_field :firstName, :placeholder=>"First Name" %>
+		    
+		    <label>Last name</label>
+	    	<%= user_fields.text_field :lastName, :placeholder=>"Last Name" %>
+		    
+		    <label>Gender</label>
+		    <select>
+		    	<option>Male</option>
+		    	<option>Female</option>
+		   	</select>
+		    
+		    <label>University</label>
+		    <input type="text" placeholder="University">
+
+		    <label>Email</label>
+	    	<%= user_fields.text_field :email, :placeholder=>"Email" %>
+		    
+		 <% end %>
+	  </fieldset>
+
+	  
+	  <fieldset class="span6">
+	    <legend>Card information</legend>
+	    
+	    <% unless card_form.error_messages.length == 0%>
+    	<div class="alert alert-error">
+    	<%= card_form.error_messages %>
+    	</div>
+    	<% end %>
+	    <label>Name on card</label>
+	    <%= card_form.text_field :nameOnCard, :placeholder=>"Name on Card" %>
+	    <span class="help-block">Name to printed on the card must be 23 characters only!</span>
+
+	    <label>Card type</label>
+	    <%# collection_select(:card, :type_id, Card::CardTypes) %>
+	    <%= card_form.collection_select :type_id, CardType.all.sort.reverse, :id, :toString %>
+	    
+	    <span class="help-block">Expiration months are beside each card type in months</span>
+	    
+	    
+	    <label>Card issue</label>
+	    <%= card_form.collection_select :issue_id, CardIssue.all.sort.reverse, :id, :toString %>
+	    <span class="help-block">Issue date is beside each issue title in the combo-box items</span>
+	    
+	    
+	    <label>Card number</label>
+	    <%= card_form.text_field :number, :placeholder=>"0000000000000000" %>
+	     
+	    
+	    
+	  </fieldset>
+ 
+  </div>
+  
+  <div class="row-fluid">
+  	<fieldset class="span12">
+  		
+  		<legend>Dev options</legend>
+  		
+  		<label>Next Stage</label>
+  		
+  		<%= card_form.collection_select :status_id, CardStatus.all, :id, :title %>
+  		
+  		<label class="checkbox">
+  		<%= card_form.check_box :called %> Called
+  		</label>
+  		
+  		<label class="checkbox">
+  		<%= card_form.check_box :sanityChecked %> Sanity Checked
+  		</label>
+  		
+  	</fieldset>
+  </div>
+  
+  
+  <div class="form-actions">
+  	<button type="submit" class="btn btn-success">Submit</button>
+  	
+  	<a href="<%=cards_path%>" class="btn btn-danger btn">Cancel</a>
+  </div>
+  
+  
+  
+<% end %>

@@ -1,0 +1,54 @@
+<%= render :partial => 'cards/base', :locals => { :current => "import" } %>
+<%# render 'form' %>
+
+<% content_for :title do %>
+  Cards
+<% end %>
+
+
+<% content_for :subtitle do %>
+ 	Import Excel Sheet
+<% end %>
+
+
+
+<!--form>
+  <fieldset>
+    <legend>User information</legend>
+    <label>First name</label>
+    <input type="text" placeholder="Type something…">
+    <span class="help-block">Example block-level help text here.</span>
+    <label class="checkbox">
+      <input type="checkbox"> Check me out
+    </label>
+    <button type="submit" class="btn">Submit</button>
+  </fieldset>
+</form-->
+
+
+
+<%= form_tag({:action => :import_excel}, :multipart => true) do %>
+	
+  <div class="row-fluid">
+	  <fieldset class="span12">
+	    <legend>Excel Sheet Selection</legend>
+	    
+	    <label>Excel Sheet file</label>
+	     <%= file_field_tag 'sheet' %>
+	    
+	  
+	    
+	  </fieldset>
+
+  </div>
+  
+  
+  <div class="form-actions">
+  	<button type="submit" class="btn btn-success">Import</button>
+  	
+  	<a href="<%=cards_path%>" class="btn btn-danger btn">Cancel</a>
+  </div>
+  
+  
+  
+<% end %>

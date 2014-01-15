@@ -1,0 +1,30 @@
+<% content_for :title do %>
+ Check phone Availability
+<% end %>
+
+<% content_for :subtitle do %>
+<% end %>
+
+
+<%= form_tag({:action => :phone_availability}) do %>
+
+	    <fieldset>
+		    <label>Phone number</label>
+		     <select name="check" id="title">
+			    <option value="equals" label="equals">equals</option>
+			    <option value="startswith" label="starts with">starts with</option>
+			    <option value="endswith" label="ends with">ends with</option>
+			    <option value="like" label="contains">contains</option>
+			</select>
+			
+		     
+		     <input type="text" placeholder="number">
+	    
+	    </fieldset>
+	    <div class="form-actions">
+	    	<button type="submit" class="btn btn-primary">Search</button>
+	    </div>
+	  
+	    
+
+<% end %>

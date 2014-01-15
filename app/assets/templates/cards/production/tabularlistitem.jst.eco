@@ -1,0 +1,25 @@
+<td> <%= @item.get('id') %> 
+	
+	<% if @item.get('title'): %>
+		#<%=@item.get('title') %>
+	<% end %>
+	
+</td>
+<td>
+	<%= @item.get('created_at') %>
+</td>
+<td class="batch_cards">
+	<ul>
+		<% for c in @item.get('card'): %>
+			
+			<li>
+				<a id="card_<%= c.id %>" class="card_view" href="javascript:;"><%= c.number %> <%= c.nameOnCard %> </a>
+			
+			</li>
+		
+		<% end %>
+	</ul>
+</td>
+
+<td class="actions" style="vertical-align:middle">
+</td>

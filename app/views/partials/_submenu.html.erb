@@ -1,0 +1,10 @@
+
+<% items.each do |k,v| %>
+
+<li class="nav-header"><%=k%></li>
+
+	<% v.each do |item| %>
+<li id="submenu_<%=item[:id]%>" <% if current == item[:id] %> class="active" <% end %> ><a href="<%=item[:href]%>" title="<%=item[:title]%>"><%=item[:text]%></a></li>
+	
+	<% end %>
+<% end %>

@@ -1,0 +1,15 @@
+<div class="backbonents-widget backbonents-page row-fluid">
+	
+	<div class="span12">
+		<div class="backbonents-page-header"></div>
+		<div class="backbonents-page-body"></div>
+		<div class="backbonents-page-footer"></div>
+		
+		<div class="backbonents-page-modalsink"></div>
+		
+		<div class="cardview-dialog"></div>
+	</div>
+	
+	
+
+</div>

@@ -1,0 +1,153 @@
+// Place all the styles related to the cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+td.actions {
+  text-align: center;
+  
+  
+  div {
+    margin-bottom: 5px;
+  }
+}
+
+div.card {
+  background: url(card300.jpg) no-repeat scroll 0 0 white;
+  width:300px;
+  height: 189px;
+  position: relative;
+  //top: 58px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+div.card-data {
+  color: white;
+  position: absolute;
+  top: 100px;
+  left: 27px;
+}
+
+div.card-number {
+  font-size: 21px;
+  margin-bottom: 5px;
+
+}
+
+div.card-dates {
+  margin-bottom: 5px;
+  left: 2px;
+  position: relative;
+}
+
+div.card-date {
+  float: left;
+  margin-right: 65px;
+}
+
+div.card-date-label {
+ font-size: 9px;
+}
+
+div.card-name {
+  left: 2px;
+  position: relative;
+}
+
+div.card-date-value {
+  font-size: 10px;
+  line-height: 10px;
+}
+tr.card_inline_edit:hover {
+  background-color: inherit;
+}
+
+.status_indicator_norm {
+  
+  img.spinner {
+    display:none;
+  }
+  
+  span.icon-ok {
+    display: none;
+  }
+  
+  
+}
+
+.status_indicator_progress {
+  
+  img.spinner {
+    display: inline;
+  }
+  
+  span.icon-ok {
+    display: none;
+  }
+}
+
+.status_indicator_success {
+  
+  img.spinner {
+    display: none;
+  }
+  
+  span.icon-ok {
+    display: block;
+  }
+}
+
+
+.spinner {
+  
+ height:15px;
+ width:15px;
+
+}
+
+div.queue_box {
+  
+  padding: 10px;
+  
+  //position: fixed;
+  div.actions {
+     ul {
+
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+  }  
+  }
+ 
+}
+
+div.kiwi-view-footer {
+
+  ul {
+
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  li {
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+  }  
+}
+
+div.kiwi-view-body {
+  
+  min-height: 40px;
+  
+  table {
+
+    margin-bottom: 0;
+  }
+}
